@@ -43,3 +43,24 @@ it('should render a button at the second child of the ul',()=>{
 
     expect(search.find('ul').childAt(1).find('button')).toHaveLength(1);
 });
+
+describe('the behavior',()=>{
+    it('should call the callback function on click button',()=>{
+        const callback = jest.fn(); 
+        const nameSearch = shallow(<NameSearch onClick={callback}/>)
+
+        nameSearch.find('ul').childAt(1).find('button').simulate('click');
+
+        expect(callback).toHaveBeenCalledTimes(1);
+    })
+
+    it('should call the callback function with rigth arg on click button',()=>{
+        const callback = jest.fn(); 
+        const nameSearch = shallow(<NameSearch onClick={callback}/>)
+
+        nameSearch.find('ul').childAt(1).find('input').simulate('change',{currentTarget:{value:'value'}})
+        nameSearch.find('ul').childAt(1).find('button').simulate('click');
+
+        expect(callback).toHaveBeenCalledWith('value');
+    })
+});
