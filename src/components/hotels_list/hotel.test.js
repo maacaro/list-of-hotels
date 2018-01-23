@@ -10,7 +10,7 @@ const amenities= [
     'separate-bredroom'
   ];
 
-var wrapper = enzyme.shallow(<Hotel name ={"Stefano"} amenities={amenities} image={'9291429_9_b.jpg'}/>);
+var wrapper = enzyme.shallow(<Hotel name ={"Stefano"} stars={3} price={44} amenities={amenities} image={'9291429_9_b.jpg'}/>);
 
 it('should have a <ul> as outest element',()=>{
 

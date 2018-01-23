@@ -1,6 +1,6 @@
 import React  from 'react';
 import Amenities from './amenities.js';
-import Stars from './stars.js';
+import Stars from '../stars/stars';
 import Price from './price.js';
 import PropTypes from 'prop-types';
 
@@ -23,4 +23,9 @@ export default Hotel;
 
 Hotel.propTypes = {
     name: PropTypes.string.isRequired,
+    stars: PropTypes.number.isRequired,
+    amenities: PropTypes.array.isRequired,
+    image: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired
+    
   };
