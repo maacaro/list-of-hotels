@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchName = ()=>
+const NameSearch = ()=>
     <ul>
         <li>
             <img src={require(`../../assets/icons/filters/search.svg`)} height="14" width="14" />
@@ -11,4 +11,4 @@ const SearchName = ()=>
         </li>
     </ul>
 
-export default SearchName;
+export default NameSearch;
