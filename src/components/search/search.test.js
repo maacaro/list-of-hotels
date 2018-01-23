@@ -19,3 +19,15 @@ it('should render ``Filtros` at the fist child of ul',()=>{
 
     expect(search.find('ul').childAt(0).text()).toEqual('Filtros')
 });
+
+it('should render `NameSearch` at the second child of ul',()=>{
+    const search = shallow(<Search/>)
+
+    expect(search.find('ul').find('NameSearch')).toHaveLength(1)
+});
+
+it('should render `NameSearch` at the second child of ul',()=>{
+    const search = shallow(<Search/>)
+
+    expect(search.find('ul').find('StarSearch')).toHaveLength(1)
+});
