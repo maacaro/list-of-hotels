@@ -15,8 +15,37 @@ class App extends Component {
     this.state = {
       hotels:[],
       nameSearch:'',
-      starSearch:'ALL'
+      starSearch:{
+        1:true,
+        2:false,
+        3:false,
+        4:false,
+        5:false,
+        6:false
+      }
     }
+  }
+
+  handleNameOnChange = async (nameSearch)=>{
+    this.setState(
+      {
+        nameSearch,
+        hotels: await getHotels(nameSearch, this.state.starSearch)
+      });
+  }
+
+  handleStarsOnChange = async (starSearch)=>{
+    const stars = {
+      ...this.state.starSearch,
+      [starSearch]:!this.state.starSearch[starSearch]
+    };
+    const starsQuery = Object.keys(stars).filter(index => stars[index]===true).join(",");
+   
+    this.setState(
+      {
+        starSearch: stars,
+        hotels: await getHotels(this.state.nameSearch,starsQuery)
+      });
   }
 
   componentWillMount = async ()=>{
@@ -30,7 +59,7 @@ class App extends Component {
   render() {
     return (
       <div className='container'>
-        <Search/>
+        <Search starsOnChange={this.handleStarsOnChange} nameOnChange ={this.handleNameOnChange} />
         <HotelList hotels={this.state.hotels}/>
       </div>
     );
