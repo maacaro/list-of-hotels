@@ -30,10 +30,12 @@ class App extends Component {
   }
 
   handleNameOnChange = async (nameSearch)=>{
+    const starsQuery = this.generateStarsQuery(this.state.starSearch);
+
     this.setState(
       {
         nameSearch,
-        hotels: await getHotels(nameSearch, this.state.starSearch)
+        hotels: await getHotels(nameSearch,starsQuery)
       });
   }
 
