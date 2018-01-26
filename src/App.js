@@ -63,10 +63,10 @@ class App extends Component {
     return (
       <Grid fluid>
         <Row>
-          <Col xs={12} lg={3}>
+          <Col xs={12} lg={3} className="container-main-coll">
             <Search starsOnChange={this.handleStarsOnChange} nameOnChange ={this.handleNameOnChange} />
           </Col>
-          <Col xs={12} lg={9}>
+          <Col xs={12} lg={9} className="container-main-coll">
             <ListOfHotels data={this.state.hotels}/>
           </Col>
         </Row>

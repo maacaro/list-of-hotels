@@ -53,3 +53,11 @@ li {
   margin: 10px;
   background-color: #ffffff ;
 }
+
+.container-main-coll{
+   padding: 0;
+}
+.search {
+  background-color: #ffffff ;
+  margin-top: 10px;
+}
