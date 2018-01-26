@@ -9,3 +9,7 @@ const Price = ({price})=>  <ul>
 </ul>;
 
 export default Price;
+
+Price.propTypes = {
+    price: PropTypes.number.isRequired,
+};

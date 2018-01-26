@@ -27,5 +27,4 @@ Hotel.propTypes = {
     amenities: PropTypes.array.isRequired,
     image: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired
-    
-  };
+};

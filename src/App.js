@@ -2,12 +2,9 @@ import React, { Component } from 'react';
 import Search from './components/search/search';
 import Hotel from './components/hotels_list/hotel';
 import getHotels from './Api-Services/hotelsApi';
+import ListOfHotels from './components/hotels_list/list-of-hotels';
+import {Grid, Row, Col} from 'react-bootstrap';
 import './App.css';
-
-const HotelList = ({hotels})=> 
-<div className = 'hotel-container'>
-  {hotels.map(hotel =><Hotel key={hotel.id} name ={hotel.name} stars={hotel.stars} price={hotel.price} amenities={hotel.amenities} image={hotel.image}/> )}
-</div>
 
 class App extends Component {
   constructor(props) {
@@ -64,10 +61,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className='container'>
-        <Search starsOnChange={this.handleStarsOnChange} nameOnChange ={this.handleNameOnChange} />
-        <HotelList hotels={this.state.hotels}/>
-      </div>
+      <Grid fluid>
+        <Row>
+          <Col xs={12} lg={3}>
+            <Search starsOnChange={this.handleStarsOnChange} nameOnChange ={this.handleNameOnChange} />
+          </Col>
+          <Col xs={12} lg={9}>
+            <ListOfHotels data={this.state.hotels}/>
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }

@@ -40,7 +40,12 @@ li {
   display: flex;
   flex-wrap: wrap;
 }
-.container {
+.container-stars {
   display: flex;
   flex-wrap: wrap;
+}
+
+.container-rows{
+  padding:10px;
+  margin: 10px;
 }

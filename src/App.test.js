@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import {shallow} from 'enzyme';
+import ListOfHotels from './components/hotels_list/list-of-hotels';
 import getHotels from './Api-Services/hotelsApi';
+
 
 const data = [{
   id: "249942",
@@ -45,7 +47,7 @@ it('should render all the hotels returned in the fetch call',()=>{
   
    const app = shallow(<App />);
 
-  expect(app.find('HotelList')).toHaveLength(1);
+  expect(app.find('ListOfHotels')).toHaveLength(1);
 });
 
 
